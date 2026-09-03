@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Appointment | NEXT Nails</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+<nav class="navbar">
+    <div class="navbar__container">
+
+        <a href="index.html" id="navbar__logo">NEXT</a>
+
+        <div class="navbar__toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+
+        <ul class="navbar__menu">
+
+            <li class="navbar__item">
+                <a href="index.html" class="navbar__links">Home</a>
+            </li>
+
+            <li class="navbar__item">
+                <a href="gallery.html" class="navbar__links">Gallery</a>
+            </li>
+
+            <li class="navbar__item">
+                <a href="services.html" class="navbar__links">Services</a>
+            </li>
+
+            <li class="navbar__item">
+                <a href="contact.html" class="navbar__links">Contact Me</a>
+            </li>
+
+            <li class="navbar__btn">
+                <a href="appointment.html" class="button">Book Appointment</a>
+            </li>
+
+        </ul>
+
+    </div>
+</nav>
+
+    <!-- Appointment Section -->
+    <section class="appointment">
+
+        <div class="appointment__container">
+
+            <h1>Book Your Appointment</h1>
+
+            <p>
+                Ready for beautiful nails? Fill out the form below and we'll
+                contact you to confirm your appointment.
+            </p>
+
+            <form>
+
+                <label for="name">Full Name</label>
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Enter your full name"
+                    required>
+
+                <label for="email">Email Address</label>
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Enter your email"
+                    required>
+
+                <label for="phone">Phone Number</label>
+                <input
+                    type="tel"
+                    id="phone"
+                    placeholder="(555) 555-5555"
+                    required>
+
+                <label for="service">Choose a Service</label>
+
+                <select id="service" required>
+                    <option value="">Select a Service</option>
+                    <option>Classic Manicure</option>
+                    <option>Gel Manicure</option>
+                    <option>Pedicure</option>
+                    <option>Acrylic Full Set</option>
+                    <option>Acrylic Fill</option>
+                    <option>French Tips</option>
+                    <option>Nail Art</option>
+                    <option>Dip Powder</option>
+                    <option>Gel X</option>
+                    <option>Removal</option>
+                </select>
+
+                <label for="date">Appointment Date</label>
+                <input type="date" id="date" required>
+
+                <label for="time">Preferred Time</label>
+                <input type="time" id="time" required>
+
+                <label for="notes">Additional Notes</label>
+
+                <textarea
+                    id="notes"
+                    rows="5"
+                    placeholder="Tell us anything you'd like us to know..."></textarea>
+
+                <button type="submit" class="appointment__button">
+                    Book Appointment
+                </button>
+
+            </form>
+
+        </div>
+
+    </section>
+
+    <script src="app.js"></script>
+
+</body>
+</html>
