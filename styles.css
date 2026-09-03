@@ -1,1 +1,712 @@
+/* ==========================================
+   General Page Sections
+========================================== */
+html, body{
+    margin:0;
+    padding:0;
+}
 
+body{
+    background:#f5f5f5;
+    color:#222;
+}
+
+section{
+    padding:80px 40px;
+}
+
+h1{
+    text-align:center;
+    font-size:3rem;
+    margin-bottom:20px;
+}
+
+h2{
+    margin-bottom:15px;
+}
+
+p{
+    line-height:1.6;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar{
+    background:#131313;
+    height:80px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:999;
+}
+
+.navbar__container{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    width:100%;
+    max-width:1300px;
+    margin:0 auto;
+    padding:0 50px;
+}
+
+#navbar__logo{
+    font-size:2rem;
+    font-weight:bold;
+    background-image:linear-gradient(to top,#ff0844,#ffb199);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    cursor:pointer;
+    text-decoration:none;
+}
+
+/* MENU */
+.navbar__menu{
+    display:flex;
+    list-style:none;
+    align-items:center;
+    margin:0;
+    padding:0;
+}
+
+.navbar__item{
+    height:80px;
+}
+
+/* LINKS */
+.navbar__links{
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-decoration:none;
+    padding:0 1rem;
+    height:100%;
+    transition:0.3s ease;
+}
+
+.navbar__links:hover{
+    color:#f77062;
+}
+
+/* BUTTON */
+.navbar__btn{
+    display:flex;
+    align-items:center;
+    padding:0 1rem;
+}
+
+.button{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-decoration:none;
+    padding:10px 20px;
+    border-radius:4px;
+    background:#f77062;
+    color:#fff;
+    transition:0.3s ease;
+}
+
+.button:hover{
+    background:#4837ff;
+}
+
+/* =========================
+   MOBILE NAVBAR
+========================= */
+
+@media screen and (max-width:960px){
+
+    .navbar__container{
+        padding:0 20px;
+    }
+
+    .navbar__menu{
+        display:grid;
+        grid-template-columns:1fr;
+        position:absolute;
+        top:-1000px;
+        left:0;
+        width:100%;
+        background:#131313;
+        opacity:0;
+        transition:0.5s ease;
+        z-index:-1;
+    }
+
+    .navbar__menu.active{
+        top:80px;
+        opacity:1;
+        z-index:99;
+    }
+
+    .navbar__item{
+        width:100%;
+    }
+
+    .navbar__links{
+        text-align:center;
+        padding:2rem;
+        width:100%;
+        display:block;
+    }
+
+    .navbar__btn{
+        width:100%;
+        display:flex;
+        justify-content:center;
+        padding:20px;
+    }
+
+    .button{
+        width:80%;
+        height:60px;
+    }
+
+    /* hamburger bars */
+    .navbar__toggle .bar{
+        width:25px;
+        height:3px;
+        margin:5px auto;
+        display:block;
+        background:#fff;
+        transition:0.3s;
+        cursor:pointer;
+    }
+
+    #mobile-menu{
+        position:absolute;
+        top:20px;
+        right:20px;
+        cursor:pointer;
+    }
+
+    #mobile-menu.is-active .bar:nth-child(2){
+        opacity:0;
+    }
+
+    #mobile-menu.is-active .bar:nth-child(1){
+        transform:translateY(8px) rotate(45deg);
+    }
+
+    #mobile-menu.is-active .bar:nth-child(3){
+        transform:translateY(-8px) rotate(-45deg);
+    }
+}
+/* ==========================================
+   SERVICES PAGE
+========================================== */
+
+.services{
+    background:#f7f7f7;
+}
+
+.services__header{
+    max-width:700px;
+    margin:0 auto 60px;
+    text-align:center;
+}
+
+.services__container{
+    max-width:1200px;
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:30px;
+}
+
+.service__card{
+    background:white;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 10px 20px rgba(0,0,0,.1);
+    transition:.3s;
+}
+
+.service__card:hover{
+    transform:translateY(-10px);
+}
+
+.service__image{
+    height:220px;
+    background:#d8d8d8;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:#666;
+}
+
+.service__card h2{
+    text-align:center;
+    margin-top:20px;
+}
+
+.service__card p{
+    padding:15px 20px;
+    text-align:center;
+}
+
+.service__card h3{
+    text-align:center;
+    color:#f77062;
+    font-size:1.8rem;
+}
+
+.service__button{
+    display:block;
+    width:80%;
+    margin:25px auto;
+    text-align:center;
+    text-decoration:none;
+    background:#f77062;
+    color:white;
+    padding:12px;
+    border-radius:8px;
+}
+
+.service__button:hover{
+    background:#4837ff;
+}
+
+/* ==========================================
+   APPOINTMENT PAGE
+========================================== */
+
+.appointment{
+    background:#f7f7f7;
+}
+
+.appointment__container{
+    max-width:700px;
+    margin:auto;
+    background:white;
+    padding:40px;
+    border-radius:15px;
+    box-shadow:0 10px 20px rgba(0,0,0,.1);
+}
+
+.appointment p{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.appointment form{
+    display:flex;
+    flex-direction:column;
+}
+
+.appointment label{
+    margin-top:20px;
+    margin-bottom:8px;
+    font-weight:bold;
+}
+
+.appointment input,
+.appointment select,
+.appointment textarea{
+    padding:14px;
+    border:1px solid #ccc;
+    border-radius:8px;
+    font-size:16px;
+}
+
+.appointment textarea{
+    resize:vertical;
+}
+
+.appointment__button{
+    margin-top:30px;
+    padding:15px;
+    border:none;
+    border-radius:8px;
+    background:#f77062;
+    color:white;
+    cursor:pointer;
+    font-size:18px;
+}
+
+.appointment__button:hover{
+    background:#4837ff;
+}
+
+/* ==========================================
+   CONTACT PAGE
+========================================== */
+
+.contact{
+    background:#f7f7f7;
+}
+
+.contact__container{
+    max-width:1100px;
+    margin:auto;
+}
+
+.contact__info{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+    margin:50px 0;
+}
+
+.contact__card{
+    background:white;
+    padding:30px;
+    text-align:center;
+    border-radius:15px;
+    box-shadow:0 8px 18px rgba(0,0,0,.1);
+}
+
+.contact__title{
+    text-align:center;
+    margin:40px 0 20px;
+}
+
+.contact form{
+    background:white;
+    padding:40px;
+    border-radius:15px;
+    box-shadow:0 8px 18px rgba(0,0,0,.1);
+
+    display:flex;
+    flex-direction:column;
+}
+
+.contact label{
+    margin-top:18px;
+    margin-bottom:8px;
+    font-weight:bold;
+}
+
+.contact input,
+.contact textarea{
+    padding:14px;
+    border:1px solid #ccc;
+    border-radius:8px;
+    font-size:16px;
+}
+
+.contact textarea{
+    resize:vertical;
+}
+
+.contact__button{
+    margin-top:30px;
+    padding:15px;
+    background:#f77062;
+    color:white;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:18px;
+}
+
+.contact__button:hover{
+    background:#4837ff;
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media screen and (max-width:768px){
+
+    section{
+        padding:60px 20px;
+    }
+
+    h1{
+        font-size:2.2rem;
+    }
+
+    .appointment__container,
+    .contact form{
+        padding:25px;
+    }
+
+    .service__image{
+        height:180px;
+    }
+}
+/* ==================================================
+   APPOINTMENT PAGE
+================================================== */
+
+.appointment{
+    background:#f8f8f8;
+}
+
+.appointment__container{
+    max-width:700px;
+    margin:auto;
+    background:white;
+    padding:40px;
+    border-radius:15px;
+    box-shadow:0 10px 25px rgba(0,0,0,.1);
+}
+
+.appointment p{
+    text-align:center;
+    margin-bottom:25px;
+    color:#555;
+}
+
+.appointment form{
+    display:flex;
+    flex-direction:column;
+}
+
+.appointment label{
+    margin-top:18px;
+    margin-bottom:8px;
+    font-weight:bold;
+}
+
+.appointment input,
+.appointment select,
+.appointment textarea{
+    padding:14px;
+    border:1px solid #ccc;
+    border-radius:10px;
+    font-size:16px;
+    outline:none;
+    transition:.3s;
+}
+
+.appointment input:focus,
+.appointment select:focus,
+.appointment textarea:focus{
+    border-color:#f77062;
+    box-shadow:0 0 0 2px rgba(247,112,98,.2);
+}
+
+.appointment textarea{
+    resize:vertical;
+}
+
+.appointment__button{
+    margin-top:30px;
+    padding:15px;
+    border:none;
+    border-radius:10px;
+    background:#f77062;
+    color:white;
+    font-size:18px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.appointment__button:hover{
+    background:#4837ff;
+    transform:translateY(-2px);
+}
+
+/* ==================================================
+   CONTACT PAGE
+================================================== */
+
+.contact{
+    background:#f8f8f8;
+}
+
+.contact__container{
+    max-width:1100px;
+    margin:auto;
+}
+
+.contact__info{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+    margin:50px 0;
+}
+
+.contact__card{
+    background:white;
+    padding:30px;
+    text-align:center;
+    border-radius:15px;
+    box-shadow:0 10px 25px rgba(0,0,0,.1);
+    transition:.3s;
+}
+
+.contact__card:hover{
+    transform:translateY(-6px);
+}
+
+.contact__title{
+    text-align:center;
+    margin:40px 0 20px;
+}
+
+.contact form{
+    background:white;
+    padding:40px;
+    border-radius:15px;
+    box-shadow:0 10px 25px rgba(0,0,0,.1);
+
+    display:flex;
+    flex-direction:column;
+}
+
+.contact label{
+    margin-top:18px;
+    margin-bottom:8px;
+    font-weight:bold;
+}
+
+.contact input,
+.contact textarea{
+    padding:14px;
+    border:1px solid #ccc;
+    border-radius:10px;
+    font-size:16px;
+    outline:none;
+    transition:.3s;
+}
+
+.contact input:focus,
+.contact textarea:focus{
+    border-color:#f77062;
+    box-shadow:0 0 0 2px rgba(247,112,98,.2);
+}
+
+.contact textarea{
+    resize:vertical;
+}
+
+.contact__button{
+    margin-top:30px;
+    padding:15px;
+    background:#f77062;
+    color:white;
+    border:none;
+    border-radius:10px;
+    font-size:18px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.contact__button:hover{
+    background:#4837ff;
+    transform:translateY(-2px);
+}
+
+/* ==================================================
+   FOOTER (OPTIONAL)
+================================================== */
+
+.footer{
+    background:#131313;
+    color:white;
+    text-align:center;
+    padding:40px 20px;
+    margin-top:80px;
+}
+
+.footer p{
+    color:#aaa;
+}
+
+/* ==================================================
+   SMALL ANIMATIONS / POLISH
+================================================== */
+
+button,
+.service__button,
+.hero__button,
+.contact__button,
+.appointment__button{
+    transition:all .3s ease;
+}
+
+/* subtle fade-in effect for sections */
+section{
+    animation:fadeIn .6s ease-in;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(10px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* ==================================================
+   FINAL MOBILE FIXES
+================================================== */
+
+@media screen and (max-width:960px){
+
+    .appointment__container,
+    .contact form{
+        padding:25px;
+    }
+
+    .contact__info{
+        grid-template-columns:1fr;
+    }
+}
+/* ==================================================
+   GALLERY PAGE
+================================================== */
+
+.gallery{
+    background:#f8f8f8;
+    padding:80px 40px;
+}
+
+.gallery__header{
+    text-align:center;
+    max-width:700px;
+    margin:0 auto 50px;
+}
+
+.gallery__header h1{
+    font-size:3rem;
+    margin-bottom:10px;
+}
+
+.gallery__header p{
+    color:#666;
+}
+
+.gallery__container{
+    max-width:1200px;
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
+    gap:20px;
+}
+
+.gallery__item{
+    height:250px;
+    background:#ddd;
+    border-radius:15px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    color:#666;
+    font-weight:bold;
+
+    transition:.3s;
+    cursor:pointer;
+}
+
+.gallery__item:hover{
+    transform:scale(1.05);
+    background:#ccc;
+}
